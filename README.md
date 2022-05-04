@@ -1,7 +1,8 @@
-# Deploy a Python (Flask) web app to Azure App Service - Sample Application
+# LinkedIn Manager
 
-This is the sample Flask application for the Azure Quickstart [Deploy a Python (Django or Flask) web app to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/quickstart-python).  For instructions on how to create the Azure resources and deploy the application to Azure, refer to the Quickstart article.
+For now, this is just a placeholder for a Flask-based application to help me manage my LinkedIn account. As the LinkedIn API gets more and more restrictive, it's possible that I'll never actually do anything.
 
-A Django sample application is also available for the article at [https://github.com/Azure-Samples/msdocs-python-django-webapp-quickstart](https://github.com/Azure-Samples/msdocs-python-django-webapp-quickstart).
+## Ideas
 
-If you need an Azure account, you can [create on for free](https://azure.microsoft.com/en-us/free/).
+- Record the number of followers daily
+- Record the posts and reactions daily
