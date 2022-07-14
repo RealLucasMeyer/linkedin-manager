@@ -5,6 +5,7 @@ from azure.cosmos import CosmosClient
 import os
 from dotenv import load_dotenv
 import datetime
+from dateutil import tz
 
 def get_container_connection(db_name, container_name):
 
@@ -19,11 +20,13 @@ def get_container_connection(db_name, container_name):
     return container
 
 def convert_cosmos_utc_to_local(cosmos_utc_time: str) -> datetime:
+    Seattle = tz.gettz("US/Pacific")
     input_time = cosmos_utc_time[:-2]
     dtUTC = datetime.datetime.strptime(input_time, "%Y-%m-%dT%H-%M-%S.%f")
     dtZone = dtUTC.replace(tzinfo = datetime.timezone.utc)
-    dtLocal = dtZone.astimezone()
+    dtLocal = dtZone.astimezone(Seattle)
     return dtLocal
+    
 
 @app.route('/')
 def index():
