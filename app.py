@@ -30,6 +30,18 @@ def convert_cosmos_utc_to_local(cosmos_utc_time: str) -> datetime:
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/project_list')
+def project_list():
+    p1 = {"title": "My first proejct"}
+    p2 = {"title": "My second project"}
+    projects = [p1, p2]
+
+    return render_template('project_list.html', projects=projects)
+
+@app.route('/future_posts')
+def future_posts():
     container = get_container_connection("social-media", "blog-posts")
     q = 'SELECT c.title, c["linkedin-target-date-utc"] AS li_date,\
         c["twitter-target-date-utc"] AS tw_date, c["draft"] FROM c\
@@ -50,7 +62,7 @@ def index():
         item_list.append(d)        
 
     item_list = sorted(item_list, key=lambda x: x["li_date"])
-    return render_template('index.html', posts=item_list) 
+    return render_template('future_posts.html', posts=item_list) 
 
 @app.route('/favicon.ico')
 def favicon():
