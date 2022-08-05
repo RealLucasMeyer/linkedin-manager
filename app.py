@@ -1,4 +1,5 @@
 from asyncio import FastChildWatcher
+from cgitb import enable
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 app = Flask(__name__)
 from azure.cosmos import CosmosClient
@@ -34,10 +35,9 @@ def index():
 
 @app.route('/project_list')
 def project_list():
-    p1 = {"title": "My first proejct"}
-    p2 = {"title": "My second project"}
-    projects = [p1, p2]
-
+    container = get_container_connection("social-media", "projects")
+    q = 'SELECT c.title FROM c where c.active'
+    projects = container.query_items(query=q, enable_cross_partition_query=True)
     return render_template('project_list.html', projects=projects)
 
 @app.route('/future_posts')
