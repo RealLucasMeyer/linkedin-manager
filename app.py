@@ -1,5 +1,3 @@
-from asyncio import FastChildWatcher
-from cgitb import enable
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 app = Flask(__name__)
 from azure.cosmos import CosmosClient
@@ -71,8 +69,8 @@ def favicon():
 
 @app.route('/auth_test', methods=['GET'])
 def auth_test():
-    code = request.form('code')
-    render_template('oauth_test.html', code=code)
+    code = request.args.get('code')
+    return render_template('oauth_test.html', code=code)
 
 
 if __name__ == '__main__':
