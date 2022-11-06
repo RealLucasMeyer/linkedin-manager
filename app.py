@@ -69,6 +69,11 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.route('/auth_test', methods=['GET'])
+def auth_test():
+    code = request.form('code')
+    render_template('oauth_test.html', code=code)
+
 
 if __name__ == '__main__':
     load_dotenv()
