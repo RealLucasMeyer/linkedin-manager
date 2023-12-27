@@ -70,6 +70,7 @@ def favicon():
 @app.route('/auth_test', methods=['GET'])
 def auth_test():
     code = request.args.get('code')
+    
     return render_template('oauth_test.html', code=code)
 
 

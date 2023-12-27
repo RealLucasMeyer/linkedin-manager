@@ -1,0 +1,13 @@
+{
+    "author": "PERSON_URN",
+    "commentary": "POST_TEXT",
+    "visibility": "PUBLIC",
+    "distribution": {
+      "feedDistribution": "MAIN_FEED",
+      "targetEntities": [],
+      "thirdPartyDistributionChannels": []
+    },
+    "lifecycleState": "PUBLISHED",
+    "isReshareDisabledByAuthor": false
+}
+

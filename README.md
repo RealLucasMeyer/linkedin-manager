@@ -1,8 +1,17 @@
-# LinkedIn Manager
+# Social Media Manager
 
-For now, this is just a placeholder for a Flask-based application to help me manage my LinkedIn account. As the LinkedIn API gets more and more restrictive, it's possible that I'll never actually do anything.
+App to manage my social media accounts
 
-## Ideas
+## Functionality
 
-- Record the number of followers daily
-- Record the posts and reactions daily
+- [ ] Read from blog sitemap posts list
+- [x] Post to LinkedIn
+- [x] Post to Twitter
+- [x] Post to Mastodon
+- [ ] Schedule posts
+- [ ] Twilio notifications
+- [ ] Post to Threads
+- [ ] Threads analytics
+- [ ] Authentication
+- [ ] T.LY Shortener analytics
+

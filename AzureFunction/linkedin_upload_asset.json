@@ -1,0 +1,17 @@
+{
+    "registerUploadRequest": {
+       "recipes": [
+             "urn:li:digitalmediaRecipe:feedshare-image"
+       ],
+       "owner": "PERSON_URN",
+       "serviceRelationships": [
+             {
+                "relationshipType": "OWNER",
+                "identifier": "urn:li:userGeneratedContent"
+             }
+       ],
+       "supportedUploadMechanism":[
+         "SYNCHRONOUS_UPLOAD"
+      ]       
+    }
+ }
