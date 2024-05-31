@@ -31,13 +31,6 @@ def convert_cosmos_utc_to_local(cosmos_utc_time: str) -> datetime:
 def index():
     return render_template('index.html')
 
-@app.route('/project_list')
-def project_list():
-    container = get_container_connection("social-media", "projects")
-    q = 'SELECT c.title FROM c where c.active'
-    projects = container.query_items(query=q, enable_cross_partition_query=True)
-    return render_template('project_list.html', projects=projects)
-
 @app.route('/future_posts')
 def future_posts():
     container = get_container_connection("social-media", "blog-posts")
